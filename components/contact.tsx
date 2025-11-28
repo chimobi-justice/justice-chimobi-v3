@@ -22,7 +22,7 @@ export const Contact = () => {
           <Divider thickness="1px" color="border.disabled" />
 
           <Text width={{ base: "100%", md: "55%"}} lineHeight="1.9" color="fg.muted">
-            If you’re building something ambitious—and need someone who understands UI deeply let's talk.
+            If you’re building something ambitious and need someone who understands UI deeply let's talk.
           </Text>
 
           <Box>
