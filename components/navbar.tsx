@@ -28,7 +28,7 @@ export const NavBar = () => {
         >
           <Avatar.Root size={{ base: "md", md: "lg" }}>
             <Avatar.Fallback name="Justice Chimobi" />
-            <Avatar.Image src="/author_profile.jpeg" />
+            <Avatar.Image src="/author_profile.jpeg" alt="Justice Chimobi profile imgage" />
           </Avatar.Root>
 
           <Flex gap="2" align="center" display={{ base: "none", md: "flex" }}>

@@ -30,7 +30,6 @@ export const Footer = () => {
     <Container 
       maxW="7xl" 
       as="footer"
-       role="author info"
     >
       <Box
         alignItems="center"

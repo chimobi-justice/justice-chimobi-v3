@@ -11,7 +11,6 @@ export const AboutMe = () => {
       my="15px" 
       id="about" 
       as="article"
-      role="author info"
     >
       <Flex
         alignItems="flex-start"
@@ -24,7 +23,7 @@ export const AboutMe = () => {
           <Flex align="center" gap="4" mb="10px">
             <Avatar.Root size="2xl" display={{ base: "none", md: "block" }}>
               <Avatar.Fallback name="Justice Chimobi" />
-              <Avatar.Image src="/author_profile.jpeg" />
+              <Avatar.Image src="/author_profile.jpeg" alt="Justice Chimobi profile imgage"  />
             </Avatar.Root>
 
             <Heading textStyle={{ base: "4xl", md: "7xl" }} color="fg.muted">
