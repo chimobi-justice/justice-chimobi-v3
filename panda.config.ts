@@ -33,7 +33,7 @@ export default defineConfig({
             variant: {
               subtle: {
                 background: "green.5",
-                color: "green.9",
+                color: "white",
                 padding: "15px",
                 rounded: "full"
               }
