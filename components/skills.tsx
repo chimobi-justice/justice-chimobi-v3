@@ -4,6 +4,7 @@ import { Container } from "@fidely-ui/styled-system/jsx"
 const skillsList = [
   "React",
   "Next.js",
+  "TypeScript",
   "Fidely UI",
   "Chakra UI",
   "MUI",
@@ -12,9 +13,8 @@ const skillsList = [
   "Redux Toolkit",
   "Storybook",
   "TailwindCss",
-  "styled-component",
   "Laravel",
-  "PHP..."
+  "PHP"
 ]
 
 export const Skills = () => {

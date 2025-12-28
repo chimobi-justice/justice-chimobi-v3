@@ -41,7 +41,7 @@ export const HeroSection = () => {
             <GoDotFill /> Frontend Engineer
           </Heading>
 
-          <Badge variant="subtle" gap="3.2" mt="4px">
+          <Badge variant="subtle" gap="3.2" mt="4px" size="lg"> 
             AVAILABLE FOR WORK
           </Badge>
         </Flex>
