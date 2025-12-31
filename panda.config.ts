@@ -118,23 +118,16 @@ export default defineConfig({
   // The output directory for your css system
   outdir: "styled-system",
 
-  plugins: [
+   plugins: [
     {
       name: 'panda-headless-colors',
       hooks: {
-        'preset:resolved'({ preset, name }) {
-          if (name !== '@pandacss/preset-panda') return preset
-  
-          if (preset.theme?.tokens) {
-            preset.theme.tokens.colors = undefined
+        'preset:resolved': ({ utils, preset, name }) => {
+          if (name === '@pandacss/preset-panda') {
+            return utils.omit(preset, ['theme.tokens.colors', 'theme.semanticTokens.colors'])
           }
-  
-          if (preset.theme?.semanticTokens) {
-            preset.theme.semanticTokens.colors = undefined
-          }
-  
           return preset
-        },
+        }
       },
     },
   ],
