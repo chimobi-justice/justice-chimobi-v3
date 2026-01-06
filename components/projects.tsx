@@ -81,28 +81,28 @@ const PROJECT_SOURCE = [
     github: '#',
     website: 'https://leahai.co/',
   },
-  {
-    dest: '/learn-hub.png',
-    title: 'Learn Hub',
-    desc: `An online content creation and publishing platform.`,
-    github: 'https://github.com/chimobi-justice/learn-hub',
-    website: 'https://learn-hub-rosy.vercel.app/',
-  },
-  {
-    dest: '/estudy.PNG',
-    title: 'Estudy',
-    desc: `An eLearning platform to choose learning courses from
-      different categories in TECH also finding support from mentors
-      and peers`,
-    github: 'https://github.com/chimobi-justice/estudy-web-frontend',
-    website: 'https://estudy-self.vercel.app/',
-  },
-  {
-    dest: '/bluesea.png',
-    title: 'Bluesea Investment Limited',
-    desc: `Bluesea Investment Limited is a contruction company focused in
-        engineering Projects, procurement Services, and construction work.`,
-    github: 'https://github.com/chimobi-justice/bluesea',
-    website: 'https://bluesea-pi.vercel.app/',
-  },
+  // {
+  //   dest: '/learn-hub.png',
+  //   title: 'Learn Hub',
+  //   desc: `An online content creation and publishing platform.`,
+  //   github: 'https://github.com/chimobi-justice/learn-hub',
+  //   website: 'https://learn-hub-rosy.vercel.app/',
+  // },
+  // {
+  //   dest: '/estudy.PNG',
+  //   title: 'Estudy',
+  //   desc: `An eLearning platform to choose learning courses from
+  //     different categories in TECH also finding support from mentors
+  //     and peers`,
+  //   github: 'https://github.com/chimobi-justice/estudy-web-frontend',
+  //   website: 'https://estudy-self.vercel.app/',
+  // },
+  // {
+  //   dest: '/bluesea.png',
+  //   title: 'Bluesea Investment Limited',
+  //   desc: `Bluesea Investment Limited is a contruction company focused in
+  //       engineering Projects, procurement Services, and construction work.`,
+  //   github: 'https://github.com/chimobi-justice/bluesea',
+  //   website: 'https://bluesea-pi.vercel.app/',
+  // },
 ];
