@@ -76,10 +76,10 @@ const PROJECT_SOURCE = [
   },
   {
     dest: '/leahai.png',
-    title: 'Leah Ai',
+    title: 'Retailloop',
     desc: `AI platform that automates your business operations, providing real-time analytical insights enabling you to run more sustainably and profitably`,
     github: '#',
-    website: 'https://leahai.co/',
+    website: 'https://www.retailloop.co/',
   },
   // {
   //   dest: '/learn-hub.png',
