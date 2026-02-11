@@ -1,12 +1,13 @@
 import { defineConfig } from "@pandacss/dev"
 import { fidelyPreset } from "@fidely-ui/panda-preset"
 import slate from "@fidely-ui/panda-preset/colors/slate"
-import indigo from "@fidely-ui/panda-preset/colors/indigo"
+
+import accentColor from "./theme/colors/corn-flower-blue"
 
 export default defineConfig({
   presets: [
     fidelyPreset({
-      accentColor: indigo,
+      accentColor: accentColor,
       grayColor: slate,
       rounded: "sm"
     })
@@ -26,20 +27,15 @@ export default defineConfig({
   // Useful for theme customization
   theme: {
     extend: {
-      recipes: {
-        badge: {
-          variants: {
-            variant: {
-              subtle: {
-                colorPalette: "green",
-                background: "colorPalette.8",
-                color: "white",
-                rounded: "full"
-              }
-            }
+      semanticTokens: {
+        colors: {
+          // for the body backgroud light/dark colors
+          bg: {
+            surface: { value: { _light: '{colors.accentColor.3}', _dark: '{colors.bronze.3}' } }
           }
-        },
-
+        }
+      },
+      recipes: {
         button: {
           base: {
             position: "relative",
@@ -50,7 +46,7 @@ export default defineConfig({
             variant: {
               ghost: {
                 _hover: {
-                  color: "indigo.9!",
+                  color: "accentColor.9!",
                   background: "none"
                 },
                 _active: {
@@ -100,11 +96,6 @@ export default defineConfig({
     extend: {
       html: {
         scrollBehavior: "smooth"
-      },
-      "* svg": {
-        color: "indigo.9",
-        stroke: "currentColor",
-        fill: "currentColor"
       }
     }
   },

@@ -12,15 +12,18 @@ export const ColorModeButton = () => {
     setTheme(theme === "light" ? "dark" : "light")
   }
 
+  const title = theme === "light" ? "Switch to dark mode" : "Switch to light mode"
+
   return (
     <ClientOnly fallback={<Skeleton boxSize="8" />}>
       <IconButton
         onClick={handleToggleTheme}
-        size="xs"
-        variant="ghost"
-        color="inherit"
-        aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
-        title={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+        size="lg"
+        variant="subtle"
+        colorPalette="gray"
+        rounded="full"
+        aria-label={title}
+        title={title}
       >
         {theme === "light" ? (
           <IoSunnyOutline size="17px" />

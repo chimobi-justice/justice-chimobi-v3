@@ -3,7 +3,7 @@ import { Box, Button, Stack } from "@fidely-ui/react"
 import { css } from "@fidely-ui/styled-system/css"
 
 import { ColorModeButton } from "~/components/color-mode-button"
-import { MenuLink } from "~/components/navbar"
+import { MenuLink } from "~/constant/menu-links"
 
 interface DrawerProps {
   isOpen: boolean;
@@ -59,7 +59,7 @@ export const Drawer = (props: DrawerProps) => {
               onClick={props.closeDrawer}
             >
               <Link href={link.link}>
-                {link.icon} {link.name}
+                {link.name}
               </Link>
             </Button>
           ))}
