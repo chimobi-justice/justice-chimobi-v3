@@ -20,22 +20,23 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://justice-chimobi.vercel.app"),
 
   title: {
-    default: "Justice Chimobi | Frontend Engineer",
+    default: "Justice Chimobi | Frontend & Design Systems Engineer",
     template: "%s | Justice Chimobi",
   },
 
   description:
-    "I'm a frontend engineer who loves building tools, not just screens. I design systems, think deeply about interaction, and write code that feels good to use.",
+    "I'm Justice Chimobi, a Frontend & Design Systems Engineer based in Lagos, Nigeria. I'm the creator and maintainer of Fidely UI, a modern react design system",
 
   authors: [
     {
       name: "Justice Chimobi",
-      url: "https://justice-chimobi.vercel.app",
+      url: "https://github.com/chimobi-justice",
     },
   ],
 
   keywords: [
     "frontend engineer",
+    "Design Systems Engineer",
     "React",
     "Next.js",
     "UI design",
@@ -43,6 +44,7 @@ export const metadata: Metadata = {
     "Fidely UI",
     "Ark UI",
     "Panda CSS",
+    "fidely-ui",
   ],
 
   alternates: {
@@ -64,18 +66,18 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     creator: "@chimobijustice",
-    title: "Justice Chimobi | Frontend Engineer | Creator of Fidely UI",
+    title: "Justice Chimobi | Frontend & Design Systems Engineer | Creator of Fidely UI",
     description:
-      "Frontend engineer focused on design systems, developer experience, and tools.",
+      "Frontend & Design Systems Engineer engineer focused on design systems, developer experience, and tools.",
     images: ["/og.png"],
   },
 
   openGraph: {
     type: "website",
     url: "/",
-    title: "Justice Chimobi | Frontend Engineer | Creator of Fidely UI",
+    title: "Justice Chimobi | Frontend & Design Systems Engineer | Creator of Fidely UI",
     description:
-      "Frontend engineer focused on design systems, developer experience, and tools.",
+      "Frontend & Design Systems Engineer focused on design systems, developer experience, and tools.",
     siteName: "Justice Chimobi",
     locale: "en_US",
     images: [

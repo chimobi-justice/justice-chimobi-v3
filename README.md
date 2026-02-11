@@ -1,6 +1,6 @@
 # My Portfolio
 
-Built with Next.js, Fidely UI.
+Built with Next.js and powered by Fidely UI (v1).
 
 ## Tech Stack
 

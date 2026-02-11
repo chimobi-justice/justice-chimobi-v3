@@ -1,96 +1,71 @@
-import Image from "next/image"
 import Link from "next/link"
-import {
-  Badge,
-  Button,
-  Flex,
-  Heading,
-  HStack,
-  Stack,
-  Text
-} from "@fidely-ui/react"
+import { Flex, Heading, HStack, Stack, Text } from "@fidely-ui/react"
 import { Container } from "@fidely-ui/styled-system/jsx"
-import { GoDotFill } from "react-icons/go"
+
+import { Icon } from "~/components/icon"
+import { SOCIAL_LINKS } from "~/components/about-me"
 
 export const HeroSection = () => {
   return (
     <Container maxW="7xl" as="section">
       <Stack
         gap="2"
-        mt="25px"
-        mb="10px"
+        mt="20px"
+        mb="5px"
         padding="15px"
         height="75vh"
         justifyContent="center"
         flexDirection="column"
-        textAlign={{ base: "center", md: "left" }}
       >
-        <Flex 
-          align="center" 
-          gap="5" 
-          flexDirection={{ base: "column-reverse", md: "row" }}
-        >
-          <Heading
-            as="h3"
-            color="colorPalette.default"
-            size="3xl"
-            display="flex"
-            alignItems="center"
-            gap="3.2"
-          >
-            <GoDotFill /> Frontend Engineer
-          </Heading>
-
-          <Badge variant="subtle" gap="3.2" mt="4px" size="lg"> 
-            AVAILABLE FOR WORK
-          </Badge>
-        </Flex>
-
         <Flex
           align="center"
           justify="space-between"
           mt="40px"
         >
-          <Stack width={{ base: "100%", md: "75%" }} gap="7">
+          <Stack width={{ base: "100%", md: "90%" }} gap="7">
             <Heading
               as="h1"
-              textStyle={{ base: "4xl", md: "9xl" }}
+              textStyle={{ base: "3xl", md: "5xl", lg: "6xl" }}
+              fontWeight="bold"
               color="fg.muted"
             >
-              Justice Chimobi
+              Frontend & Design Systems Engineer
             </Heading>
             <Text
               color="fg.muted"
-              width={{ base: "100%", md: "70%" }}
+              width={{ base: "100%", lg: "70%" }}
               lineHeight="2em"
-              textStyle="xl"
+              textStyle={{ base: "lg", md: "xl"}}
             >
-              👋 I'm passionate about ♿️ accessibility, 😍 user experience and 🎨 human centered products.
-            </Text>
-
-            <HStack mt="15px">
-              <Button
-                variant="plain"
-                display="flex"
-                size="lg"
-                color="fg.muted"
-                padding="0"
-                asChild
-                _hover={{
-                  textDecoration: "underline"
-                }}
-
-                width={{ base: "100%", md: "auto" }}
-              >
-                <Link href={"https://fidely-ui.vercel.app/"} target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src="/fidely-small.png"
-                    width={35}
-                    height={40}
-                    alt='fidely ui logo'
-                  /> Creator, Fidely UI
+              I'm Justice Chimobi, a Frontend & Design Systems Engineer based in Lagos, Nigeria.
+              I'm the creator and maintainer of {' '}
+              <Text asChild textDecoration="underline" color="colorPalette.default">
+                <Link
+                  href={"https://fidely-ui.vercel.app/"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Fidely UI
                 </Link>
-              </Button>
+              </Text>, {' '}
+              a modern React design system library. {' '}
+              It provides accessible, themeable, and composable components for building high-quality web applications.
+            </Text>
+            
+            <HStack mt="15px" gap="5">
+              {SOCIAL_LINKS.map((link) => (
+                <Link
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.ariaLabel}
+                  key={link.name}
+                >
+                  <Icon boxSize={{ base: "5", md: "7"}} color="fg.muted">
+                    <link.icon />
+                  </Icon>
+                </Link>
+              ))}
             </HStack>
           </Stack>
         </Flex>

@@ -1,108 +1,96 @@
-import Image from "next/image"
 import Link from "next/link"
-import { Box, Button, Flex, Heading, Stack, Text } from "@fidely-ui/react"
+import { Avatar, Box, Card, Grid, GridItem, Heading, HStack, Stack } from "@fidely-ui/react"
 import { Container } from "@fidely-ui/styled-system/jsx"
 import { FaGithub } from "react-icons/fa"
-import { TiWorld } from "react-icons/ti"
+import { HiArrowUpRight } from "react-icons/hi2"
+
+import { PROJECT_SOURCE } from "~/constant/projects"
+import { Icon } from "~/components/icon"
 
 export const Projects = () => {
   return (
-    <Container maxW="7xl" my="5rem" id="projects" as="section">
-      <Box textAlign="center" mb="3.5rem">
-        <Heading textStyle="xl" color="fg.muted">Featured Works</Heading>
+    <Container maxW="7xl" my="7rem" id="projects" as="section">
+      <Box mb="14">
+        <Heading
+          as="h2"
+          textStyle={{ base: "4xl", md: "5xl" }}
+          fontWeight="bold"
+          color="fg.muted"
+        >
+          A few things I've built.
+        </Heading>
       </Box>
 
-      {PROJECT_SOURCE.map((project, index: number) => (
-        <Flex
-          alignItems="flex-start"
-          padding="15px"
-          justifyContent="space-between"
-          flexDirection={{ base: "column", md: "row" }}
-          key={index}
-        >
-          <Box width={{ base: "100%", md: "45%"}}>
-            <Heading textStyle="3xl" color="colorPalette.default" fontWeight="bold">{project.title}</Heading>
+      <Grid
+        gridTemplateColumns={{
+          base: '1fr',
+          md: 'repeat(2, 1fr)',
+          lg: 'repeat(3, 1fr)',
+        }}
+        gap={{ base: '2', md: '3' }}
+      >
+        {PROJECT_SOURCE.map((item) => (
+          <GridItem height="min-content" key={item.id}>
+            <Card.Root
+              bg="transparent"
+              shadow="none"
+              _hover={{
+                colorPalette: 'gray',
+                bg: "colorPalette.alpha3",
+              }}
+            >
+              <Card.Body>
+                <Stack gap="6">
+                  <Avatar.Root size="lg">
+                    <Avatar.Fallback name={item.title} />
+                    <Avatar.Image src={item.dest} alt={item.title} />
+                  </Avatar.Root>
 
-            <Box my="20px" bg="colorPalette.3" padding="15px" rounded="md" width="100%" position="relative">
-              <Text color="fg.muted" lineHeight="1.8em">{project.desc}</Text>
-            </Box>
+                  <Card.Title>{item.title}</Card.Title>
+                  <Card.Description>{item.desc}</Card.Description>
 
-            <Stack flexDirection={{ base: "column", md: "row" }}>
-              <Button 
-                fullWidth
-                asChild
-              >
-                <Link href={project.website} target="_blank">
-                  <TiWorld color="gray" /> Website
-                </Link>
-              </Button>
+                  <HStack gap="4">
+                    <Link href={item.website} target="_blank" rel="noopener noreferrer">
+                      <HStack
+                        transition="all 0.2s"
+                        _hover={{
+                          colorPalette: "accentColor",
+                          color: "colorPalette.default",
+                          transform: "translateX(2px)"
+                        }}
+                      >
+                        Live
+                        <Icon boxSize="4">
+                          <HiArrowUpRight />
+                        </Icon>
+                      </HStack>
+                    </Link>
+                    
+                    {item.github !== "#" && (
+                      <Link href={item.github} target="_blank" rel="noopener noreferrer">
+                        <HStack
+                          transition="all 0.2s"
+                          _hover={{
+                            colorPalette: "accentColor",
+                            color: "colorPalette.default",
+                            transform: "translateX(2px)"
+                          }}
+                        >
 
-              <Button 
-                variant="outline" 
-                fullWidth
-                asChild
-              >
-                <Link href={project.github} target="_blank">
-                  <FaGithub /> Github
-                </Link>
-              </Button>
-            </Stack>
-          </Box>
-
-          <Box width={{ base: "100%", md: "45%"}}>
-            <Image
-              src={project.dest}
-              width={480}
-              height={440}
-              alt="my photo"
-              quality={100}
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsn9pfDwAFogI0qPkC4wAAAABJRU5ErkJggg=="
-            />
-          </Box>
-        </Flex>
-      ))}
+                          <Icon boxSize="4">
+                            <FaGithub />
+                          </Icon>
+                          Code
+                        </HStack>
+                      </Link>
+                    )}
+                  </HStack>
+                </Stack>
+              </Card.Body>
+            </Card.Root>
+          </GridItem>
+        ))}
+      </Grid>
     </Container>
   )
 }
-
-const PROJECT_SOURCE = [
-  {
-    dest: '/fidely-ui-img.png',
-    title: 'Fidely UI',
-    desc: `Fidely UI is a modern UI library with reusable, intuitive components that help you ship products faster. Create beautiful, consistent interfaces with customizable, production-ready building blocks.`,
-    github: 'https://github.com/fidely-ui/fidely-ui',
-    website: 'https://fidely-ui.vercel.app/',
-  },
-  {
-    dest: '/leahai.png',
-    title: 'Retailloop',
-    desc: `AI platform that automates your business operations, providing real-time analytical insights enabling you to run more sustainably and profitably`,
-    github: '#',
-    website: 'https://www.retailloop.co/',
-  },
-  // {
-  //   dest: '/learn-hub.png',
-  //   title: 'Learn Hub',
-  //   desc: `An online content creation and publishing platform.`,
-  //   github: 'https://github.com/chimobi-justice/learn-hub',
-  //   website: 'https://learn-hub-rosy.vercel.app/',
-  // },
-  // {
-  //   dest: '/estudy.PNG',
-  //   title: 'Estudy',
-  //   desc: `An eLearning platform to choose learning courses from
-  //     different categories in TECH also finding support from mentors
-  //     and peers`,
-  //   github: 'https://github.com/chimobi-justice/estudy-web-frontend',
-  //   website: 'https://estudy-self.vercel.app/',
-  // },
-  // {
-  //   dest: '/bluesea.png',
-  //   title: 'Bluesea Investment Limited',
-  //   desc: `Bluesea Investment Limited is a contruction company focused in
-  //       engineering Projects, procurement Services, and construction work.`,
-  //   github: 'https://github.com/chimobi-justice/bluesea',
-  //   website: 'https://bluesea-pi.vercel.app/',
-  // },
-];
