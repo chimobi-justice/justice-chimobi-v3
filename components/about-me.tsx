@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Avatar, Box, Divider, Flex, Heading, HStack, Span, Stack, Text } from "@fidely-ui/react"
+import { Avatar, Box, Clipboard, Divider, Flex, Heading, HStack, IconButton, Span, Stack, Text } from "@fidely-ui/react"
 import { Container } from "@fidely-ui/styled-system/jsx"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
@@ -109,21 +109,33 @@ export const AboutMe = () => {
 
               <Divider thickness="2px" />
 
-              <Link href="mailto:chimobi.justice@gmail.com">
-                <HStack
-                  gap="3"
-                  transition="all 0.2s"
-                  _hover={{
-                    color: "colorPalette.default",
-                    transform: "translateX(3px)",
-                  }}
-                >
+              <Stack>
+                <Box>
+                  <Text>Email me at</Text>
+                </Box>
+
+                <HStack gap="1" alignItems="center" justify="center">
                   <Icon boxSize="7">
                     <MdEmail />
                   </Icon>
-                  chimobi.justice@gmail.com
+
+                  <Text>
+                    chimobi.justice@gmail.com
+                  </Text>
+
+                  <Clipboard.Root value="chimobi.justice@gmail.com">
+                    <Clipboard.Control>
+                      <Clipboard.Trigger asChild>
+                        <IconButton variant="ghost" size="md" aria-label="Copy email" pt="1">
+                          <Clipboard.Indicator copied="Copied">
+                            Copy
+                          </Clipboard.Indicator>
+                        </IconButton>
+                      </Clipboard.Trigger>
+                    </Clipboard.Control>
+                  </Clipboard.Root>
                 </HStack>
-              </Link>
+              </Stack>
             </Stack>
           </Stack>
         </Box>

@@ -11,6 +11,8 @@ export const Provider = (props: ProviderProps) => {
     <ThemeProvider
       attribute="class"
       disableTransitionOnChange
+      defaultTheme="dark"
+      enableSystem
     >
       {props.children}
     </ThemeProvider>
